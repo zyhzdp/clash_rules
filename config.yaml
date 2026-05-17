@@ -200,7 +200,7 @@ proxy-providers:
   # and fill your own subscription URL or local proxy nodes there.
   airport:
     type: file
-    path: ./private/proxy-providers.yaml
+    path: /data/other_vol/ShellCrash/proxy-providers.yaml
     health-check:
       enable: true
       interval: 600
