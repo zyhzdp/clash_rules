@@ -21,7 +21,8 @@
 │       ├── github.yaml          # GitHub 规则
 │       ├── google.yaml          # Google 规则
 │       ├── lan.yaml             # 局域网/内网直连
-│       └── openai.yaml          # OpenAI/ChatGPT 规则
+│       ├── openai.yaml          # OpenAI/ChatGPT 规则
+│       └── reject-quic.yaml     # UDP/443 QUIC 拦截规则
 ├── templates/
 │   └── private-providers.example.yaml
 ├── ruleset/                     # ShellCrash 运行时下载缓存，已忽略
@@ -33,8 +34,9 @@
 
 1. 将 `templates/private-providers.example.yaml` 复制到 `private/proxy-providers.yaml`。
 2. 在 `private/proxy-providers.yaml` 中填入你的机场订阅 URL 或本地节点文件。
-3. 在 ShellCrash 中加载 `config.yaml`。
-4. 如果你的 ShellCrash 工作目录不是仓库根目录，请把 `config.yaml` 里的相对路径改成 ShellCrash 实际可读取的路径。
+3. 将仓库推送到 GitHub。
+4. 在 ShellCrash 中加载 `config.yaml`。
+5. `rule-providers` 使用 `https://raw.githubusercontent.com/zyhzdp/clash_rules/main/...` 远程地址；`path` 只是 ShellCrash 本地缓存路径。
 
 ## 私密配置
 

@@ -273,40 +273,60 @@ proxy-groups:
 
 rule-providers:
   lan:
-    type: file
+    type: http
     behavior: classical
     format: yaml
-    path: ./providers/rules/lan.yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/lan.yaml
+    path: ./ruleset/lan.yaml
+    interval: 86400
 
   china-direct:
-    type: file
+    type: http
     behavior: classical
     format: yaml
-    path: ./providers/rules/china-direct.yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/china-direct.yaml
+    path: ./ruleset/china-direct.yaml
+    interval: 86400
 
   openai:
-    type: file
+    type: http
     behavior: classical
     format: yaml
-    path: ./providers/rules/openai.yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/openai.yaml
+    path: ./ruleset/openai.yaml
+    interval: 86400
 
   ai:
-    type: file
+    type: http
     behavior: classical
     format: yaml
-    path: ./providers/rules/ai.yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/ai.yaml
+    path: ./ruleset/ai.yaml
+    interval: 86400
 
   google:
-    type: file
+    type: http
     behavior: classical
     format: yaml
-    path: ./providers/rules/google.yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/google.yaml
+    path: ./ruleset/google.yaml
+    interval: 86400
 
   github:
-    type: file
+    type: http
     behavior: classical
     format: yaml
-    path: ./providers/rules/github.yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/github.yaml
+    path: ./ruleset/github.yaml
+    interval: 86400
+
+  reject-quic:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/zyhzdp/clash_rules/main/providers/rules/reject-quic.yaml
+    path: ./ruleset/reject-quic.yaml
+    interval: 86400
 
   direct:
     type: http
@@ -344,7 +364,7 @@ rules:
   - RULE-SET,direct,DIRECT
 
   # Disable QUIC. This keeps Google/YouTube traffic on TCP/TLS instead of UDP/443.
-  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+  - RULE-SET,reject-quic,REJECT
 
   # Special routing.
   - RULE-SET,openai,OpenAI
