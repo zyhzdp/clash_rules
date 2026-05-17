@@ -1,0 +1,15 @@
+# Copy this file to:
+#   private/proxy-providers.yaml
+#
+# The copied file is ignored by git. Put private subscription URLs or local
+# node definitions there.
+
+proxies:
+  # Example:
+  # - name: "example-node"
+  #   type: ss
+  #   server: example.com
+  #   port: 8388
+  #   cipher: aes-128-gcm
+  #   password: "DO_NOT_COMMIT_REAL_PASSWORDS"
+

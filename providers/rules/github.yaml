@@ -1,0 +1,16 @@
+payload:
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,github.io
+  - DOMAIN-SUFFIX,githubassets.com
+  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,githubcopilot.com
+  - DOMAIN-SUFFIX,github.dev
+  - DOMAIN-SUFFIX,ghcr.io
+  - DOMAIN-SUFFIX,actions.githubusercontent.com
+  - DOMAIN-SUFFIX,raw.githubusercontent.com
+  - DOMAIN-SUFFIX,objects.githubusercontent.com
+  - DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com
+  - DOMAIN-SUFFIX,github-com.s3.amazonaws.com
+  - DOMAIN-SUFFIX,github-production-release-asset-2e65be.s3.amazonaws.com
+  - DOMAIN-KEYWORD,github
+

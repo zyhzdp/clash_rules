@@ -1,0 +1,7 @@
+private/
+ruleset/
+ui/
+*.secret.yaml
+*.local.yaml
+*.bak
+*.tmp

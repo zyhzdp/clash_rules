@@ -1,0 +1,27 @@
+payload:
+  - DOMAIN-SUFFIX,cn
+  - DOMAIN-SUFFIX,中国
+  - DOMAIN-SUFFIX,公司
+  - DOMAIN-SUFFIX,网络
+  - DOMAIN-SUFFIX,政务
+  - DOMAIN-SUFFIX,alibaba.com
+  - DOMAIN-SUFFIX,alicdn.com
+  - DOMAIN-SUFFIX,aliyun.com
+  - DOMAIN-SUFFIX,baidu.com
+  - DOMAIN-SUFFIX,bdstatic.com
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,bilivideo.com
+  - DOMAIN-SUFFIX,bytedance.com
+  - DOMAIN-SUFFIX,douyin.com
+  - DOMAIN-SUFFIX,jd.com
+  - DOMAIN-SUFFIX,mi.com
+  - DOMAIN-SUFFIX,miui.com
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,taobao.com
+  - DOMAIN-SUFFIX,tencent.com
+  - DOMAIN-SUFFIX,tmall.com
+  - DOMAIN-SUFFIX,wechat.com
+  - DOMAIN-SUFFIX,weixin.qq.com
+  - DOMAIN-SUFFIX,xiaomi.com
+  - DOMAIN-SUFFIX,zhihu.com
+

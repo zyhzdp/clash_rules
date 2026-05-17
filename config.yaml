@@ -1,0 +1,364 @@
+# Public ShellCrash / Clash Meta config.
+# Keep subscriptions, proxy nodes, controller secrets and tokens outside this repo.
+
+mixed-port: 7890
+redir-port: 7892
+tproxy-port: 7893
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+
+# Public-safe default. If you need LAN dashboard access, set a real secret in a
+# local/private config before changing this to :9999 or 0.0.0.0:9999.
+external-controller: 127.0.0.1:9999
+external-ui: ui
+external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-cdn-fonts.zip"
+
+tun:
+  enable: true
+  stack: system
+  device: utun
+  auto-route: false
+  auto-detect-interface: false
+
+experimental:
+  ignore-resolve-fail: true
+  interface-name: en0
+
+find-process-mode: "off"
+routing-mark: 7894
+unified-delay: true
+use-system-hosts: true
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+geodata-mode: true
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 24
+
+hosts:
+  "time.android.com": 203.107.6.88
+  "time.facebook.com": 203.107.6.88
+  "services.googleapis.cn": services.googleapis.com
+  "localhost": 127.0.0.1
+
+dns:
+  enable: true
+  listen: :1053
+  use-hosts: true
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 2400:3200::1
+  direct-nameserver:
+    - 127.0.0.1
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.0/8
+  fake-ip-range6: fc00::/16
+  respect-rules: true
+  nameserver-policy:
+    "rule-set:cn":
+      - 127.0.0.1
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 2400:3200::1
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fake-ip-filter:
+    # Do not add "*" here unless you intentionally want fake-ip to be bypassed
+    # for almost every domain.
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - "*.direct"
+    - "time.*.com"
+    - "time.*.gov"
+    - "time.*.edu.cn"
+    - "time.*.apple.com"
+    - "time-ios.apple.com"
+    - "time1.*.com"
+    - "time2.*.com"
+    - "time3.*.com"
+    - "time4.*.com"
+    - "time5.*.com"
+    - "time6.*.com"
+    - "time7.*.com"
+    - "ntp.*.com"
+    - "ntp1.*.com"
+    - "ntp2.*.com"
+    - "ntp3.*.com"
+    - "ntp4.*.com"
+    - "ntp5.*.com"
+    - "ntp6.*.com"
+    - "ntp7.*.com"
+    - "*.time.edu.cn"
+    - "*.ntp.org.cn"
+    - "+.pool.ntp.org"
+    - "time1.cloud.tencent.com"
+    - "music.163.com"
+    - "*.music.163.com"
+    - "*.126.net"
+    - "musicapi.taihe.com"
+    - "music.taihe.com"
+    - "songsearch.kugou.com"
+    - "trackercdn.kugou.com"
+    - "*.kuwo.cn"
+    - "api-jooxtt.sanook.com"
+    - "api.joox.com"
+    - "joox.com"
+    - "y.qq.com"
+    - "*.y.qq.com"
+    - "streamoc.music.tc.qq.com"
+    - "mobileoc.music.tc.qq.com"
+    - "isure.stream.qqmusic.qq.com"
+    - "dl.stream.qqmusic.qq.com"
+    - "aqqmusic.tc.qq.com"
+    - "amobile.music.tc.qq.com"
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - "music.migu.cn"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "localhost.ptlogin2.qq.com"
+    - "localhost.sec.qq.com"
+    - "localhost.*.weixin.qq.com"
+    - "+.kk-rays.com"
+    - "+.steamcontent.com"
+    - "+.srv.nintendo.net"
+    - "*.n.n.srv.nintendo.net"
+    - "+.cdn.nintendo.net"
+    - "xbox.*.*.microsoft.com"
+    - "*.*.xboxlive.com"
+    - "xbox.*.microsoft.com"
+    - "xnotify.xboxlive.com"
+    - "+.battle.net"
+    - "+.battlenet.com.cn"
+    - "+.wotgame.cn"
+    - "+.wggames.cn"
+    - "+.wowsgame.cn"
+    - "+.wargaming.net"
+    - "proxy.golang.org"
+    - "+.stun.*.*"
+    - "+.stun.*.*.*"
+    - "+.stun.*.*.*.*"
+    - "+.stun.*.*.*.*.*"
+    - "heartbeat.belkin.com"
+    - "*.linksys.com"
+    - "*.linksyssmartwifi.com"
+    - "*.router.asus.com"
+    - "mesu.apple.com"
+    - "swscan.apple.com"
+    - "swquery.apple.com"
+    - "swdownload.apple.com"
+    - "swcdn.apple.com"
+    - "swdist.apple.com"
+    - "lens.l.google.com"
+    - "na.b.g-tun.com"
+    - "*.square-enix.com"
+    - "*.finalfantasyxiv.com"
+    - "*.ffxiv.com"
+    - "*.ff14.sdo.com"
+    - "ff.dorado.sdo.com"
+    - "*.mcdn.bilivideo.cn"
+    - "+.media.dssott.com"
+    - "shark007.net"
+    - "Mijia Cloud"
+    - "+.market.xiaomi.com"
+    - "+.cmbchina.com"
+    - "+.cmbimg.com"
+    - "adguardteam.github.io"
+    - "adrules.top"
+    - "anti-ad.net"
+    - "local.adguard.org"
+    - "static.adtidy.org"
+    - "+.sandai.net"
+    - "+.n0808.com"
+    - "+.3gppnetwork.org"
+    - "+.uu.163.com"
+    - "ps.res.netease.com"
+    - "+.pub.3gppnetwork.org"
+    - "+.oray.com"
+    - "+.orayimg.com"
+    - "+.gcloudcs.com"
+    - "+.gcloudsdk.com"
+    - "+.dynv6.net"
+    - "rule-set:cn"
+
+proxy-providers:
+  # This file is intentionally ignored by git.
+  # Copy templates/private-providers.example.yaml to private/proxy-providers.yaml
+  # and fill your own subscription URL or local proxy nodes there.
+  airport:
+    type: file
+    path: ./private/proxy-providers.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: https://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - Auto
+      - DIRECT
+    use:
+      - airport
+
+  - name: Auto
+    type: url-test
+    use:
+      - airport
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 80
+
+  - name: OpenAI
+    type: select
+    proxies:
+      - Proxy
+      - Auto
+      - DIRECT
+      - REJECT
+    use:
+      - airport
+
+  - name: AI
+    type: select
+    proxies:
+      - OpenAI
+      - Proxy
+      - Auto
+      - DIRECT
+      - REJECT
+    use:
+      - airport
+
+  - name: Google
+    type: select
+    proxies:
+      - Proxy
+      - Auto
+      - DIRECT
+      - REJECT
+    use:
+      - airport
+
+  - name: GitHub
+    type: select
+    proxies:
+      - Proxy
+      - Auto
+      - DIRECT
+      - REJECT
+    use:
+      - airport
+
+  - name: Final
+    type: select
+    proxies:
+      - Proxy
+      - Auto
+      - DIRECT
+
+rule-providers:
+  lan:
+    type: file
+    behavior: classical
+    format: yaml
+    path: ./providers/rules/lan.yaml
+
+  china-direct:
+    type: file
+    behavior: classical
+    format: yaml
+    path: ./providers/rules/china-direct.yaml
+
+  openai:
+    type: file
+    behavior: classical
+    format: yaml
+    path: ./providers/rules/openai.yaml
+
+  ai:
+    type: file
+    behavior: classical
+    format: yaml
+    path: ./providers/rules/ai.yaml
+
+  google:
+    type: file
+    behavior: classical
+    format: yaml
+    path: ./providers/rules/google.yaml
+
+  github:
+    type: file
+    behavior: classical
+    format: yaml
+    path: ./providers/rules/github.yaml
+
+  direct:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt
+    path: ./ruleset/direct.txt
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt
+    path: ./ruleset/proxy.txt
+    interval: 86400
+
+  gfw:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt
+    path: ./ruleset/gfw.txt
+    interval: 86400
+
+  cn:
+    type: http
+    behavior: domain
+    format: mrs
+    path: ./ruleset/cn.mrs
+    url: https://testingcf.jsdelivr.net/gh/juewuy/ShellCrash@update/bin/geodata/mrs_geosite_cn.mrs
+    interval: 86400
+
+rules:
+  # LAN and domestic traffic first.
+  - RULE-SET,lan,DIRECT
+  - RULE-SET,china-direct,DIRECT
+  - RULE-SET,direct,DIRECT
+
+  # Disable QUIC. This keeps Google/YouTube traffic on TCP/TLS instead of UDP/443.
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+
+  # Special routing.
+  - RULE-SET,openai,OpenAI
+  - RULE-SET,ai,AI
+  - RULE-SET,google,Google
+  - RULE-SET,github,GitHub
+
+  # Community proxy rules.
+  - RULE-SET,gfw,Proxy
+  - RULE-SET,proxy,Proxy
+
+  # China fallback.
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+
+  # Everything else.
+  - MATCH,Final
